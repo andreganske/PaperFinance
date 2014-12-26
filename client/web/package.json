@@ -1,0 +1,12 @@
+{
+  "name": "PaperFinance",
+  "version": "1.0.0",
+  "description": "PaperFinance web Client",
+  "main": "index.js",
+  "repository": "https://github.com/andreganske/PaperFinance",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@andreganske",
+  "license": "ISC"
+}
