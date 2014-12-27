@@ -1,3 +1,5 @@
+'use strict';
+
 var app = angular.module('myApp.signin', ['ngRoute', 'ngMaterial']);
 
 app.controller('signinCrtl', function($rootScope, $scope, $mdDialog) {

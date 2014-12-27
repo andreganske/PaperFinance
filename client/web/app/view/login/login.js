@@ -1,3 +1,5 @@
+'use strict';
+
 var app = angular.module('myApp.login', ['ngRoute', 'ngMaterial']);
 
 app.controller('loginCrtl', function($rootScope, $scope, $mdDialog) {

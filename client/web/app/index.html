@@ -25,9 +25,11 @@
   <![endif]-->
   <header ng-include="'view/header/header.html'"></header>
 
-  <div ng-view></div>
+  <div class="view-animate-container">
+    <div ng-view class="view-animate"></div>
+  </div>
 
-  <footer ng-include="'view/footer/footer.html'" ></footer>
+  <!--footer ng-include="'view/footer/footer.html'" ></footer-->
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>

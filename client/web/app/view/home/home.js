@@ -1,12 +1,14 @@
-angular.module('myApp.home', ['ngRoute'])
+'use strict';
 
-.config(['$routeProvider', function($routeProvider) {
+var app = angular.module('myApp.home', ['ngRoute', 'ngMaterial']);
+
+app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/home', {
-    templateUrl: 'home/home.html',
+    templateUrl: 'view/home/home.html',
     controller: 'homeCtrl'
   });
-}])
+}]);
 
-.controller('homeCtrl', [function() {
+app.controller('homeCtrl', [function() {
 
 }]);

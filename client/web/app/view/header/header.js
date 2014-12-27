@@ -1,3 +1,5 @@
+'use strict';
+
 var app = angular.module('myApp.header', ['ngRoute', 'ngMaterial']);
 
 app.controller('headerCrtl', function($rootScope, $scope, $mdDialog) {
