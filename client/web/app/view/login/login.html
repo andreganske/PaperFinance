@@ -1,0 +1,20 @@
+<div ng-controller="loginCrtl" layout="row" layout-fill>
+
+  <md-dialog aria-label="PaperFinance log in">
+    <md-content>
+    
+      <md-subheader class="md-sticky-no-effect">Log in</md-subheader>
+
+      <form style="padding: 20px;">
+        <div class="row">
+          <md-text-float label="{{login}}" ng-model="user.username"></md-text-float>
+          <md-text-float label="{{password}}" ng-model="user.password" type="password"></md-text-float>
+        </div>
+      </form>
+    </md-content>
+
+    <div class="md-actions" layout="row">
+      <md-button ng-click="doLogin()" class="md-primary">Entrar</md-button>
+    </div>
+  </md-dialog>
+</div>
