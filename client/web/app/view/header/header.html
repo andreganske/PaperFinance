@@ -1,0 +1,19 @@
+<div ng-controller="headerCrtl">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h3><span>PaperFinance</span></h3>
+    </div>
+  </md-toolbar>
+
+  <md-content>
+    <md-list>
+      <md-item ng-repeat="page in pages">
+        <md-item-content>
+          <div class="md-tile-content">
+            <a href="{{page.link}}"><h4>{{page.name}}</h4></a>
+          </div>
+        </md-item-content>
+      </md-item>
+    </md-list>
+  </md-content>
+</div>
