@@ -1,12 +1,17 @@
 <div ng-controller="headerCrtl" layout="row" layout-fill>
-  <md-toolbar>
-    <div class="md-toolbar-tools" >
-      <h3><span>PaperFinance</span></h3>
+	<md-toolbar>
+		<div class="md-toolbar-tools" >
+			<h3><span>PaperFinance</span></h3>
 
-      <div layout="row" layout-fill layout-align="end center">
-          <md-button class="md-button-colored" ng-click="showLogin($event)">{{login}}</md-button>
-          <md-button class="md-button-colored"ng-click="showSignin($event)">{{signin}}</md-button>
-      </div>
-    </div>
-  </md-toolbar>
+			<div layout="row" layout-fill layout-align="end center">
+				
+				<h6 ng-show="currentUser">{{loged}}}</h6>
+
+				<md-button class="md-button-colored" ng-click="showLogin($event)" ng-hide="currentUser">{{login}}</md-button>
+				<md-button class="md-button-colored"ng-click="showSignin($event)" ng-hide="currentUser">{{signin}}</md-button>
+
+				<md-button class="md-button-colored"ng-click="doSignout($event)" ng-show="currentUser">{{signout}}</md-button>
+			</div>
+		</div>
+	</md-toolbar>
 </div>

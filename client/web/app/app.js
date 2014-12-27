@@ -24,6 +24,8 @@ app.config(['$routeProvider', function($routeProvider) {
   
 }]);
 
-app.controller('AppCtrl', function($scope) {
+app.controller('AppCtrl', function($scope, $rootScope) {
+
+    $rootScope.user = new Parse.User();
 
 });

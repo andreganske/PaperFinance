@@ -1,6 +1,6 @@
 var app = angular.module('myApp.signin', ['ngRoute', 'ngMaterial']);
 
-app.controller('signinCrtl', function($scope, $mdDialog, $mdToast, $animate) {
+app.controller('signinCrtl', function($rootScope, $scope, $mdDialog) {
 
 	$scope.login = 'Usuário';
 	$scope.password = 'Senha';
@@ -26,7 +26,8 @@ app.controller('signinCrtl', function($scope, $mdDialog, $mdToast, $animate) {
 
 		newUser.signUp (null, {
 			success: function(user) {
-				user = this.user;
+				$rootScope.user = this.user;
+				$mdDialog.hide();
 			},
 			error: function(user, error) {
 				alert("Error: " + error.code + " " + error.message);

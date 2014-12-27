@@ -1,8 +1,11 @@
 var app = angular.module('myApp.header', ['ngRoute', 'ngMaterial']);
 
-app.controller('headerCrtl', function($scope, $mdDialog) {
+app.controller('headerCrtl', function($rootScope, $scope, $mdDialog) {
 	$scope.login = 'Log in';
 	$scope.signin = 'Sign in';
+	$scope.signout = 'Sign out';
+
+	$scope.currentUser = false;
 
 
 	$scope.showLogin = function(ev) {
@@ -11,9 +14,7 @@ app.controller('headerCrtl', function($scope, $mdDialog) {
 			targetEvent: ev,
 		})
 		.then(function(answer) {
-			$scope.alert = 'You said the information was "' + answer + '".';
-		}, function() {
-			$scope.alert = 'You cancelled the dialog.';
+			$scope.validateUser();
 		});
 	};
 
@@ -22,10 +23,24 @@ app.controller('headerCrtl', function($scope, $mdDialog) {
 			templateUrl: 'view/signin/signin.html',
 			targetEvent: ev,
 		})
-		.then(function(answer) {
-			$scope.alert = 'You said the information was "' + answer + '".';
-		}, function() {
-			$scope.alert = 'You cancelled the dialog.';
+		.then(function() {
+			$scope.validateUser();
 		});
 	};
+
+	$scope.doSignout = function(ev) {
+		Parse.User.logOut();
+		$scope.validateUser();		
+	}
+
+	$scope.validateUser = function() {
+		var currentUser = Parse.User.current();
+		if (currentUser) {
+			$scope.loged = 'Bem vindo ' + $rootScope.user.attributes.name;
+			$scope.currentUser = true;
+		} else {
+			$scope.currentUser = false;
+		}
+	};
+
 });
