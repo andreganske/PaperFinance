@@ -38,7 +38,7 @@ app.controller('headerCrtl', function($rootScope, $scope, $mdDialog) {
 	$scope.validateUser = function() {
 		var currentUser = Parse.User.current();
 		if (currentUser) {
-			$scope.loged = 'Bem vindo ' + $rootScope.user.attributes.name;
+			$scope.logged = 'Bem vindo ' + currentUser.attributes.name;
 			$scope.currentUser = true;
 		} else {
 			$scope.currentUser = false;

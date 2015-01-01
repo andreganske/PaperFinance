@@ -1,11 +1,11 @@
 <div ng-controller="headerCrtl" layout="row" layout-fill>
-	<md-toolbar>
+	<md-toolbar ng-init="validateUser()">
 		<div class="md-toolbar-tools" >
 			<h3><span>PaperFinance</span></h3>
 
 			<div layout="row" layout-fill layout-align="end center">
 				
-				<h6 ng-show="currentUser">{{loged}}}</h6>
+				<h4 class="logged-user" ng-show="currentUser">{{logged}}</h4>
 
 				<md-button class="md-button-colored" ng-click="showLogin($event)" ng-hide="currentUser">{{login}}</md-button>
 				<md-button class="md-button-colored"ng-click="showSignin($event)" ng-hide="currentUser">{{signin}}</md-button>
